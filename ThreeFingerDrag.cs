@@ -1,4 +1,11 @@
 ﻿// Three-Finger Drag for Windows precision touchpads.
+//
+// Designed and tuned on, and for, the ASUS ExpertBook A7 (model A7406CMA):
+//   touchpad HID ASCO1D82 (VID 093A, PID 4F09), 20629 x 13007 counts, about 140 reports/s
+//   display 2880 x 1800 at 200% scaling, Windows touchpad CursorSpeed 6
+// Settings chosen on that machine (these are the built-in defaults):
+//   speed=2.5  acceleration=1.0  release_delay_ms=100  start_delay_ms=40  start_distance_mm=1.0
+// On another computer start from these and adjust "speed" in settings.ini.
 // Build (no SDK needed, uses the compiler that ships with Windows):
 //   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /nologo /target:winexe /platform:x64 /optimize+
 //     /r:System.Windows.Forms.dll /r:System.Drawing.dll /out:ThreeFingerDrag.exe ThreeFingerDrag.cs
@@ -45,7 +52,7 @@ static class Native {
 class Settings {
   public bool Enabled = true;
   public int ReleaseDelayMs = 100;
-  public double Speed = 1.0;
+  public double Speed = 2.5;
   public double Acceleration = 1.0;
   public int StartDelayMs = 40;
   public double StartDistance = 1.0;
@@ -62,9 +69,9 @@ class Settings {
     "; Milliseconds the button stays held after the fingers lift, so a drag can be\r\n" +
     "; continued by putting three fingers back down. 0 = release at once.\r\n" +
     "release_delay_ms=100\r\n" +
-    "; Pointer speed. 1.0 = same as the normal one-finger pointer, 2.0 = twice as\r\n" +
-    "; fast, 0.5 = half. Allowed range 0.1 to 10.\r\n" +
-    "speed=1.0\r\n" +
+    "; Pointer speed multiplier; higher is faster. 2.5 is the value tuned on the\r\n" +
+    "; ASUS ExpertBook A7. Allowed range 0.1 to 10.\r\n" +
+    "speed=2.5\r\n" +
     "; Acceleration. 0 = none (distance depends only on how far the fingers move),\r\n" +
     "; 1.0 = default (faster finger movement travels further).\r\n" +
     "acceleration=1.0\r\n" +
@@ -504,4 +511,5 @@ static class Program {
     }
   }
 }
+
 
