@@ -1,11 +1,21 @@
 # myinput-installers
 Installers for MyInput (Traditional Chinese pinyin input) and Three-Finger Drag, Windows x64
 
+## Three-Finger Drag: which download
+
+| Download (see Releases) | Optimized for |
+|---|---|
+| `ThreeFingerDrag-Setup-x64.exe` (the original app, with setup wizard) | ASUS ProArt 14 Spark |
+| `ThreeFingerDrag-rebuilt-x64.exe` (rebuilt, single exe) | ASUS ExpertBook A7 |
+
+The original app was designed and tuned on the ASUS ProArt 14 Spark. On the ASUS ExpertBook A7
+its drag was far too slow, so it was rebuilt there.
+
 ## Three-Finger Drag source (ASUS ExpertBook A7)
 
-`ThreeFingerDrag.cs` is a rebuild of Three-Finger Drag, designed and tuned on, and for, the
-ASUS ExpertBook A7 (model A7406CMA). The `ThreeFingerDrag-Setup-x64.exe` in the releases is
-the earlier build, which was far too slow on this laptop; it is not built from this file.
+`ThreeFingerDrag.cs` is the rebuild of Three-Finger Drag, designed and tuned on, and for, the
+ASUS ExpertBook A7 (model A7406CMA). The original `ThreeFingerDrag-Setup-x64.exe` is not built
+from this file.
 
 Tuned against:
 
